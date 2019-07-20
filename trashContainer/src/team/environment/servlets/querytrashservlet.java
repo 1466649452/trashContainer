@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import team.environment.dao.impl.CitytrashClassDaoImpl;
 import team.environment.dao.impl.TrashDaoImpl;
+import team.environment.trash.po.Citytrashclass;
 import team.environment.trash.po.TrashInfo;
 
 /**
@@ -96,15 +98,35 @@ public class querytrashservlet extends HttpServlet {
 			}
 			
 		}
+		ArrayList<String> array=new ArrayList<String>();
 		
-		//重新初始化存储空间
-		this.a=new int[100];
-		this.temp=new ArrayList<ArrayList<Integer>>();
+		for(int i=0;i<arr.size();i++) {
+			//查询得到结果
+			int mmm=arr.get(i).getTrashclass();
+			Citytrashclass tem=new CitytrashClassDaoImpl().queryOneLine(mmm);
+		
+			
+			//将结果保存到list中，格式：垃圾名称+分类
+			String string=arr.get(i).getTrashname()+":	"+tem.getClassname();
+			System.out.println(string);
+			array.add(string);
+		}
+		
+		
 		
 		//获取session从request处
 		HttpSession session=request.getSession();
 		
-		session.setAttribute("ansArr", arr);
+		session.setAttribute("ansArr", array);
+		
+		
+		//重新初始化存储空间
+		this.a=new int[100];
+		this.temp=new ArrayList<ArrayList<Integer>>();
+		array=new ArrayList<String>();
+				
+		
+		//重定向网页
 		response.sendRedirect("querytrash.jsp");
 	}
 

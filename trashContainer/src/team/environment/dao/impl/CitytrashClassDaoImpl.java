@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.mysql.jdbc.Statement;
+
 import team.environment.dao.ICitytrashclassDao;
 import team.environment.db.DB;
 import team.environment.trash.po.Citytrashclass;
@@ -15,6 +17,26 @@ public class CitytrashClassDaoImpl implements ICitytrashclassDao{
 	
 	public CitytrashClassDaoImpl() {
 		this.db=new DB();
+	}
+	
+	public Citytrashclass queryOneLine(int id) {
+		String sql="select * from citytrashclass where classid="+id+"";
+		
+		ResultSet res=db.query(sql);
+		try {
+			if(res.next()) {
+				TryCity trycity=new TryCity();
+				trycity.setCityname(res.getString(2));
+				Citytrashclass citytrashclass=new Citytrashclass(res.getInt(1),res.getString(3),trycity,res.getString(4));
+				return citytrashclass;
+			
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
 	}
 	
 	

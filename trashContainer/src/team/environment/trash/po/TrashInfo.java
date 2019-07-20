@@ -3,14 +3,14 @@ package team.environment.trash.po;
 public class TrashInfo {
 	private int trashid;
 	private String trashname;
-	private String trashclass;
+	private int trashclass;
 	private TryCity classcity;
 	
 	public TrashInfo() {
 		
 	}
 
-	public TrashInfo(int trashid, String trashname, String trashclass, TryCity classcity) {
+	public TrashInfo(int trashid, String trashname, int trashclass, TryCity classcity) {
 		super();
 		this.trashid = trashid;
 		this.trashname = trashname;
@@ -34,11 +34,11 @@ public class TrashInfo {
 		this.trashname = trashname;
 	}
 
-	public String getTrashclass() {
+	public int getTrashclass() {
 		return trashclass;
 	}
 
-	public void setTrashclass(String trashclass) {
+	public void setTrashclass(int trashclass) {
 		this.trashclass = trashclass;
 	}
 

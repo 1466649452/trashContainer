@@ -29,7 +29,7 @@ public class TrashDaoImpl implements ITrashDao{
 				TryCity city=new TryCity();
 				city.setCityname(res.getString(4));
 
-				TrashInfo ti=new TrashInfo(res.getInt(1), res.getString(2), res.getString(3), city);
+				TrashInfo ti=new TrashInfo(res.getInt(1), res.getString(2), res.getInt(3), city);
 				
 				arr.add(ti);
 			}
@@ -58,7 +58,7 @@ public class TrashDaoImpl implements ITrashDao{
 				city.setCityname(res.getString(4));
 				ti.setTrashid(res.getInt(1));
 				ti.setTrashname(res.getString(2));
-				ti.setTrashclass(res.getString(3));
+				ti.setTrashclass(res.getInt(3));
 				ti.setClasscity(city);
 				arr.add(ti);
 			}
@@ -88,7 +88,7 @@ public class TrashDaoImpl implements ITrashDao{
 				city.setCityname(res.getString(4));
 				ti.setTrashid(res.getInt(1));
 				ti.setTrashname(res.getString(2));
-				ti.setTrashclass(res.getString(3));
+				ti.setTrashclass(res.getInt(3));
 				ti.setClasscity(city);
 				arr.add(ti);
 			}

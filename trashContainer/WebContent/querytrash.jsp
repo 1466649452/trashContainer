@@ -23,8 +23,8 @@
 			<tr>
 				<c:forEach var="checkans" items="${sessionScope.ansArr }">
 				<td>
-					${checkans.getTrashname() }
-				</td>	
+					${checkans }
+				</td>
 				</c:forEach>
 			</tr>
 		</table>
