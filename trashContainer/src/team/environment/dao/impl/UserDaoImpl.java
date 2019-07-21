@@ -42,4 +42,37 @@ public class UserDaoImpl implements IUserDao {
 		}
 		return false;
 	}
+	@Override
+	public UserInfo getInfo(String uemail) {
+		UserInfo User = new UserInfo();
+		String sql="select * from userinfo where uemail='"+uemail+"'";
+		try {
+			ResultSet rs = db.query(sql);
+			while(rs.next()){
+				User.setUserid(rs.getInt("userid"));
+				User.setUname(rs.getString("uname"));
+				User.setUemail(uemail);
+				User.setSex(rs.getString("sex"));
+				User.setState(rs.getInt("state"));
+				User.setRepoints(rs.getDouble("repoints"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return User;
+	}
+	@Override
+	public String getuname(int userid) {
+		String uname = null;
+		String sql="select * from userinfo where userid='"+userid+"'";
+		try {
+			ResultSet rs = db.query(sql);
+			while(rs.next()){
+				uname = rs.getString("uname");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return uname;
+	}
 }
