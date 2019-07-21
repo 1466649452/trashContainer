@@ -1,4 +1,4 @@
-package Tem.Green.Junk.db;
+package team.environment.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,7 +14,7 @@ public class DB {
 	public DB() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String url="jdbc:mysql://127.0.0.1:3306/junkbase";
+			String url="jdbc:mysql://127.0.0.1:3306/trashbase";
 			this.conn = DriverManager.getConnection(url,"root","1");
 			//System.out.println(this.conn.isClosed());
 		} catch (ClassNotFoundException e) {

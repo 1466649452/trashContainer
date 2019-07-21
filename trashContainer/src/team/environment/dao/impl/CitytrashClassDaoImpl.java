@@ -8,9 +8,9 @@ import com.mysql.jdbc.Statement;
 
 import team.environment.dao.ICitytrashclassDao;
 import team.environment.db.DB;
-import team.environment.trash.po.Citytrashclass;
-import team.environment.trash.po.TrashInfo;
-import team.environment.trash.po.TryCity;
+import team.environment.po.Citytrashclass;
+import team.environment.po.TrashInfo;
+import team.environment.po.TryCity;
 
 public class CitytrashClassDaoImpl implements ICitytrashclassDao{
 	private DB db;

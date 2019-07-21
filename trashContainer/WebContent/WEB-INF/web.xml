@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
-  <display-name>GREENJUNK</display-name>
+  <display-name>trashContainer</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -11,29 +11,29 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>LogServlet</display-name>
-    <servlet-name>LogServlet</servlet-name>
-    <servlet-class>Tem.Green.Junk.servlet.LogServlet</servlet-class>
+    <display-name>QueryClassServlet</display-name>
+    <servlet-name>QueryClassServlet</servlet-name>
+    <servlet-class>team.environment.servlets.QueryClassServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>LogServlet</servlet-name>
-    <url-pattern>/LogServlet</url-pattern>
+    <servlet-name>QueryClassServlet</servlet-name>
+    <url-pattern>/QueryClassServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>RegisterServlet</display-name>
-    <servlet-name>RegisterServlet</servlet-name>
-    <servlet-class>Tem.Green.Junk.servlet.RegisterServlet</servlet-class>
+    <display-name>ShowTrashListServlet</display-name>
+    <servlet-name>ShowTrashListServlet</servlet-name>
+    <servlet-class>team.environment.servlets.ShowTrashListServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>RegisterServlet</servlet-name>
-    <url-pattern>/RegisterServlet</url-pattern>
+    <servlet-name>ShowTrashListServlet</servlet-name>
+    <url-pattern>/ShowTrashListServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>ExitServlet</display-name>
     <servlet-name>ExitServlet</servlet-name>
-    <servlet-class>Tem.Green.Junk.servlet.ExitServlet</servlet-class>
+    <servlet-class>team.environment.servlet.ExitServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ExitServlet</servlet-name>
@@ -41,12 +41,62 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>RegisterServlet</display-name>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>team.environment.servlet.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>ChoiceAddressServlet</display-name>
     <servlet-name>ChoiceAddressServlet</servlet-name>
-    <servlet-class>team.environment.servlets.ChoiceAddressServlet</servlet-class>
+    <servlet-class>team.environment.servlet.ChoiceAddressServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ChoiceAddressServlet</servlet-name>
     <url-pattern>/ChoiceAddressServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateOrderServlet</display-name>
+    <servlet-name>CreateOrderServlet</servlet-name>
+    <servlet-class>team.environment.servlet.CreateOrderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateOrderServlet</servlet-name>
+    <url-pattern>/CreateOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PayOrderServlet</display-name>
+    <servlet-name>PayOrderServlet</servlet-name>
+    <servlet-class>team.environment.servlet.PayOrderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PayOrderServlet</servlet-name>
+    <url-pattern>/PayOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogServlet</display-name>
+    <servlet-name>LogServlet</servlet-name>
+    <servlet-class>team.environment.servlet.LogServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogServlet</servlet-name>
+    <url-pattern>/LogServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>querytrashservlet</display-name>
+    <servlet-name>querytrashservlet</servlet-name>
+    <servlet-class>team.environment.servlet.querytrashservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>querytrashservlet</servlet-name>
+    <url-pattern>/querytrashservlet</url-pattern>
   </servlet-mapping>
 </web-app>

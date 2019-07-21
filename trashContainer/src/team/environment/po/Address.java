@@ -1,12 +1,12 @@
-package Tem.Green.Junk.po;
+package team.environment.po;
 
 
 //外键使用对象来处理更好。此处urserid为外键，故需要使用userinfo.getUserid()来获取
 public class Address {
 	private UserInfo userid;
+	private String ansname;
 	private int number;
 	private String province;
-	private String district;
 	private TryCity city;
 	private String detail;
 	private String phonenumber;
@@ -14,18 +14,19 @@ public class Address {
 	public Address() {
 		
 	}
-
-	public Address(UserInfo userid, int number, String province, String district, TryCity city, String detail,
+	
+	public Address(UserInfo userid, String ansname, int number, String province, TryCity city, String detail,
 			String phonenumber) {
 		super();
 		this.userid = userid;
+		this.ansname = ansname;
 		this.number = number;
 		this.province = province;
-		this.district = district;
 		this.city = city;
 		this.detail = detail;
 		this.phonenumber = phonenumber;
 	}
+
 
 	public UserInfo getUserid() {
 		return userid;
@@ -33,6 +34,14 @@ public class Address {
 
 	public void setUserid(UserInfo userid) {
 		this.userid = userid;
+	}
+
+	public String getAnsname() {
+		return ansname;
+	}
+
+	public void setAnsname(String ansname) {
+		this.ansname = ansname;
 	}
 
 	public int getNumber() {
@@ -49,14 +58,6 @@ public class Address {
 
 	public void setProvince(String province) {
 		this.province = province;
-	}
-
-	public String getDistrict() {
-		return district;
-	}
-
-	public void setDistrict(String district) {
-		this.district = district;
 	}
 
 	public TryCity getCity() {
@@ -83,6 +84,5 @@ public class Address {
 		this.phonenumber = phonenumber;
 	}
 
-	
 	
 }

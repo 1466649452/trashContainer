@@ -1,4 +1,4 @@
-package Tem.Green.Junk.po;
+package team.environment.po;
 
 public class GameTest {
 	private int quesid;

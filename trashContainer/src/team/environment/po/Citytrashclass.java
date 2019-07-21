@@ -1,4 +1,4 @@
-package Tem.Green.Junk.po;
+package team.environment.po;
 
 
 //外键使用对象来处理

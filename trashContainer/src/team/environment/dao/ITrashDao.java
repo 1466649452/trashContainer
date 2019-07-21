@@ -2,7 +2,7 @@ package team.environment.dao;
 
 import java.util.ArrayList;
 
-import team.environment.trash.po.TrashInfo;
+import team.environment.po.TrashInfo;
 
 public interface ITrashDao {
 	public ArrayList<TrashInfo> querytrash();//查询表中所有信息

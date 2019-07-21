@@ -49,7 +49,7 @@
 				<c:forEach var="detailclass" items="${sessionScope.detailclass }">
 				<td>
 					${detailclass.trashname }
-				</td>	
+				</td>
 				</c:forEach>
 			</tr>
 		</table>

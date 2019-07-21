@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 import team.environment.dao.ITrashDao;
 import team.environment.db.DB;
-import team.environment.trash.po.TrashInfo;
-import team.environment.trash.po.TryCity;
+import team.environment.po.TrashInfo;
+import team.environment.po.TryCity;
 
 public class TrashDaoImpl implements ITrashDao{
 	

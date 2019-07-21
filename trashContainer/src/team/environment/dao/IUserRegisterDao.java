@@ -1,6 +1,4 @@
-package Tem.Green.Junk.dao;
-
-import Tem.Green.Junk.po.UserInfo;
+package team.environment.dao;
 
 public interface IUserRegisterDao {
 	public boolean AddRegUser(String uname, String uemail, String upass);

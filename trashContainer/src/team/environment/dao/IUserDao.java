@@ -1,6 +1,6 @@
-package Tem.Green.Junk.dao;
+package team.environment.dao;
 
-import Tem.Green.Junk.po.UserInfo;
+import team.environment.po.UserInfo;
 
 public interface IUserDao {
 	public boolean loginUser(String uemail, String upass);
