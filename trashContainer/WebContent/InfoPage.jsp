@@ -16,14 +16,14 @@
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <link href="dashboard.css" rel="stylesheet">
+    <link href="CSS/dashboard.css" rel="stylesheet">
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
   </head>
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-fixed-top" style="background-color: #1F8430;color: white;">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -32,14 +32,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">垃圾分类 改变生活</a>
+          <a class="navbar-brand" href="#" style="color:white">垃圾分类 改变生活</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">主页</a></li>
-            <li><a href="#">设置</a></li>
-            <li><a href="#">帮助</a></li>
-            <li><a href="LoginPage.jsp">注销</a></li>
+            <li><a href="#" style="color:white">主页</a></li>
+            <li><a href="#" style="color:white">设置</a></li>
+            <li><a href="#" style="color:white">帮助</a></li>
+            <li><a href="LoginPage.jsp"  style="color:white">退出</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="搜索">
@@ -69,25 +69,37 @@
             		<!--1行-->
             		<tr>
             			<th style="width: 100px;"><h4>用户名：</h4></th>
-            			<th style="width: 250px;"><h4>JOJO</h4></th>
+            			<th style="width: 250px;"><h4>${sessionScope.User.uname}</h4></th>
+            			<th><a href="#"><h4>修改</h4></a></th>
+            		</tr>
+            		<!--1行-->
+            		<tr>
+            			<th style="width: 100px;"><h4>用户ID：</h4></th>
+            			<th style="width: 250px;"><h4>${sessionScope.User.userid}</h4></th>
+            			<th><a href="#"><h4>修改</h4></a></th>
+            		</tr>
+            		<!--1行-->
+            		<tr>
+            			<th style="width: 100px;"><h4>性别：</h4></th>
+            			<th style="width: 250px;"><h4>${sessionScope.User.sex}</h4></th>
             			<th><a href="#"><h4>修改</h4></a></th>
             		</tr>
             		<!--2行-->
             		<tr>
             			<th style="width: 100px;"><h4>邮箱地址：</h4></th>
-            			<th style="width: 250px;"><h4>12324423423423@qq.com</h4></th>
+            			<th style="width: 250px;"><h4>${sessionScope.User.uemail}</h4></th>
             			<th><a href="#"><h4>修改</h4></a></th>
             		</tr>
             		<!--3行-->
             		<tr>
-            			<th style="width: 100px;"><h4>城市：</h4></th>
-            			<th style="width: 250px;"><h4>上海</h4></th>
+            			<th style="width: 100px;"><h4>状态：</h4></th>
+            			<th style="width: 250px;"><h4>${sessionScope.User.state}</h4></th>
             			<th><a href="#"><h4>修改</h4></a></th>
             		</tr>
             		<!--4行-->
             		<tr>
             			<th style="width: 100px;"><h4>积分：</h4></th>
-            			<th style="width: 250px;"><h4>50</h4></th>
+            			<th style="width: 250px;"><h4>${sessionScope.User.repoints}</h4></th>
             			<th><a href="#"><h4>获取</h4></a></th>            			
             		</tr>
               </table>
@@ -99,25 +111,26 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                	<th>编号</th>
+                  <th>编号</th>
                   <th>省份</th>
                   <th>城市</th>
-                  <th>区/县</th>
-                  <th>街道</th>
-                  <th>投放点</th>
+                  <th>详细地址</th>
+                  <th>联系电话</th>
                   <th><a href="#">增加地址</a></th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>01</td>
-                  <td>上海</td>
-                  <td>上海市</td>
-                  <td>浦东新区</td>
-                  <td>明珠大道</td>
-                  <td>站点</td>
-                  <td><a href="#">修改</a></td>
-                </tr>
+              <!-- 循环显示列表 -->
+              <c:forEach var="ads" items="${sessionScope.Adress}">
+	                <tr>
+	                  <td>${ads.number}</td>
+	                  <td>${ads.province}</td>
+	                  <td>${ads.city}</td>
+	                  <td>${ads.detail}</td>
+	                  <td>${ads.phonenumber}</td>
+	                  <td><a href="#">修改</a></td>
+	                </tr>
+              </c:forEach>
               </tbody>
             </table>
           </div>

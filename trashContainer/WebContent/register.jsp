@@ -38,14 +38,14 @@
 							<h3 class="masthead-brand">分类垃圾 改变生活</h3>
 							<nav>
 								<ul class="nav masthead-nav">
-									<li class="active">
-										<a href="#">你 是什么垃圾？</a>
+									<li>
+										<a href="LoginPage.jsp">你 是什么垃圾？</a>
 									</li>
 									<li>
 										<a href="#">来看看垃圾怎么分类</a>
 									</li>
-									<li>
-										<a href="register.jsp">注册</a>
+									<li class="active">
+										<a href="#">注册</a>
 									</li>
 								</ul>
 							</nav>
@@ -62,18 +62,22 @@
 
 				<div class="inner cover" style="padding-bottom: 100px;">
 					<div class="container">
-						<form class="form-signin" action="LogServlet" method="post">
-							<h2 class="form-signin-heading">请登录</h2>
+						<form class="form-signin" action="RegisterServlet" method="post">
+							<h2 class="form-signin-heading">请输入信息完成注册</h2>
+							<label for="inputUname" class="sr-only">用户名</label>
+							<input name="uname" id="inputUnmae" class="form-control" placeholder="用户名" required autofocus>
+							<div style="margin-top: 6px"></div>
 							<label for="inputEmail" class="sr-only">邮箱地址</label>
 							<input type="email" name="uemail" id="inputEmail" class="form-control" placeholder="邮箱地址" required autofocus>
+							<div style="margin-top: 6px"></div>
 							<label for="inputPassword" class="sr-only">密码</label>
-							<input type="password" name="upass" id="inputPassword" class="form-control" placeholder="密码" required>
-							<div class="checkbox">
-							<label>
-           			 		<input type="checkbox" name="admin" value="1">管理员
-          					</label>
-							</div>
-							<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+							<input name="upass" id="inputPassword" class="form-control" placeholder="密码" required>
+							<div style="margin-top: 6px"></div>
+							<label for="inputPassword" class="sr-only">再次输入密码</label>
+							<input name="Rupass" id="inputPassword" class="form-control" placeholder="再次输入密码" required>
+							<div style="margin-top: 30px"></div>
+							
+							<button class="btn btn-lg btn-primary btn-block" type="submit">完成注册</button>
 						</form>
 
 					</div>
