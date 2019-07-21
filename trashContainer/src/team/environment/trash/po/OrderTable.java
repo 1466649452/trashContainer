@@ -12,7 +12,6 @@ public class OrderTable {
 	public OrderTable() {
 		
 	}
-
 	
 	public OrderTable(int orderid, String newordertime, String payordertime, String doneordertime, int orderstate,
 			UserInfo userid, double price) {

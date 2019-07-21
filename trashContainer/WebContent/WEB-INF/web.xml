@@ -49,4 +49,14 @@
     <servlet-name>LogServlet</servlet-name>
     <url-pattern>/LogServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ChoiceAddressServlet</display-name>
+    <servlet-name>ChoiceAddressServlet</servlet-name>
+    <servlet-class>team.environment.servlets.ChoiceAddressServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChoiceAddressServlet</servlet-name>
+    <url-pattern>/ChoiceAddressServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
