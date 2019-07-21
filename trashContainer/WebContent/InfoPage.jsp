@@ -16,7 +16,7 @@
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <link href="dashboard.css" rel="stylesheet">
+    <link href="CSS/dashboard.css" rel="stylesheet">
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
   </head>
@@ -39,7 +39,7 @@
             <li><a href="#" style="color:white">主页</a></li>
             <li><a href="#" style="color:white">设置</a></li>
             <li><a href="#" style="color:white">帮助</a></li>
-            <li><a href="LoginPage.jsp"  style="color:white">注销</a></li>
+            <li><a href="LoginPage.jsp"  style="color:white">退出</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="搜索">
@@ -69,31 +69,37 @@
             		<!--1行-->
             		<tr>
             			<th style="width: 100px;"><h4>用户名：</h4></th>
-            			<th style="width: 250px;"><h4>JOJO</h4></th>
+            			<th style="width: 250px;"><h4>${sessionScope.User.uname}</h4></th>
+            			<th><a href="#"><h4>修改</h4></a></th>
+            		</tr>
+            		<!--1行-->
+            		<tr>
+            			<th style="width: 100px;"><h4>用户ID：</h4></th>
+            			<th style="width: 250px;"><h4>${sessionScope.User.userid}</h4></th>
             			<th><a href="#"><h4>修改</h4></a></th>
             		</tr>
             		<!--1行-->
             		<tr>
             			<th style="width: 100px;"><h4>性别：</h4></th>
-            			<th style="width: 250px;"><h4>JOJO</h4></th>
+            			<th style="width: 250px;"><h4>${sessionScope.User.sex}</h4></th>
             			<th><a href="#"><h4>修改</h4></a></th>
             		</tr>
             		<!--2行-->
             		<tr>
             			<th style="width: 100px;"><h4>邮箱地址：</h4></th>
-            			<th style="width: 250px;"><h4>12324423423423@qq.com</h4></th>
+            			<th style="width: 250px;"><h4>${sessionScope.User.uemail}</h4></th>
             			<th><a href="#"><h4>修改</h4></a></th>
             		</tr>
             		<!--3行-->
             		<tr>
-            			<th style="width: 100px;"><h4>城市：</h4></th>
-            			<th style="width: 250px;"><h4>上海</h4></th>
+            			<th style="width: 100px;"><h4>状态：</h4></th>
+            			<th style="width: 250px;"><h4>${sessionScope.User.state}</h4></th>
             			<th><a href="#"><h4>修改</h4></a></th>
             		</tr>
             		<!--4行-->
             		<tr>
             			<th style="width: 100px;"><h4>积分：</h4></th>
-            			<th style="width: 250px;"><h4>50</h4></th>
+            			<th style="width: 250px;"><h4>${sessionScope.User.repoints}</h4></th>
             			<th><a href="#"><h4>获取</h4></a></th>            			
             		</tr>
               </table>

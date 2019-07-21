@@ -19,7 +19,7 @@
 
 		<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-		<link href="cover.css" rel="stylesheet">
+		<link href="CSS/cover.css" rel="stylesheet">
 
 		<script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
@@ -53,7 +53,7 @@
 					</div>
 
 					<div class="inner cover" style="margin-top: 100px;">
-						<h1 class="cover-heading">Write down your junk</h1>
+						<h1 class="cover-heading">Classify your junk</h1>
 						<p class="lead"><a href="Test2.html">直接开始</a></p>
 					</div>
 
@@ -70,7 +70,7 @@
 							<input type="password" name="upass" id="inputPassword" class="form-control" placeholder="密码" required>
 							<div class="checkbox">
 							<label>
-           			 		<input type="checkbox" value="remember-me"> 记住我
+           			 		<input type="checkbox" name="admin" value="1">管理员
           					</label>
 							</div>
 							<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
