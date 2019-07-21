@@ -2,6 +2,9 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +14,10 @@
 	</head>
 
 	<body>
-
+	
+		<c:forEach var="address" items="${sessionScope.addressArray }">
+				${address.getDetail()}
+		</c:forEach>
 
 		<!-- 此处使用《c:foreach》来循环，最前方判断session为不为空 -->
 		<form action="ChoiceAddressServlet" method="post">
@@ -28,24 +34,18 @@
 					</tr>
 				</thead>
 				<tbody>
+				
+					<c:forEach var="address" items="${sessionScope.addressArray }">
 					<tr>
 						<td><input type="radio" name="choiceaddress" value="1"></td>
-						<td>yan</td>
-						<td>上海</td>
-						<td>上海</td>
-						<td>静安区</td>
-						<td>12345678910</td>
+						<td>${address.getAnsname() }</td>
+						<td>${address.getProvince() }</td>
+						<td>${address.getCity().getCityname() }</td>
+						<td>${address.getDetail() }</td>
+						<td>${address.getPhonenumber() }</td>
 						<td>修改|删除</td>
 					</tr>
-					<tr>
-						<td><input type="radio" name="choiceaddress" value="2"></td>
-						<td>yan</td>
-						<td>上海</td>
-						<td>上海</td>
-						<td>静安区</td>
-						<td>12345678910</td>
-						<td>修改|删除</td>
-					</tr>
+					</c:forEach>
 				</tbody>
 
 			</table>

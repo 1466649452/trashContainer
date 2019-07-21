@@ -99,4 +99,14 @@
     <servlet-name>querytrashservlet</servlet-name>
     <url-pattern>/querytrashservlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SeacherServlet</display-name>
+    <servlet-name>SeacherServlet</servlet-name>
+    <servlet-class>team.environment.servlet.SeacherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SeacherServlet</servlet-name>
+    <url-pattern>/SeacherServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

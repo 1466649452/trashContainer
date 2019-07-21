@@ -26,21 +26,22 @@ public class CreateOrderServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		
 		int addressid=-1;
-		
+		int userid=Integer.parseInt(request.getParameter("userid"));
 		//判断是否已经选择地址 若无 则跳转到地址选择界面
 		try{
 			addressid=Integer.parseInt(request.getParameter("addressid"));
 			if(addressid==-1) {
-				response.sendRedirect("ChoiceAddress.jsp");
+				
+				response.sendRedirect("SeacherServlet?userid="+userid+"");
 				return;
 			}
 			
 		}catch(NumberFormatException nfe) {
 			if(addressid==-1) {
-				response.sendRedirect("ChoiceAddress.jsp");
+				response.sendRedirect("SeacherServlet?userid="+userid+"");
 				return;
 			}
-			response.sendRedirect("ChoiceAddress.jsp");
+			response.sendRedirect("SeacherServlet?userid="+userid+"");
 			return;
 		}
 		String yuyuedate=request.getParameter("yuyuedate");

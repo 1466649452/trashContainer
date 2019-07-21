@@ -40,7 +40,7 @@
 				<td>
 					<a href="ShowTrashListServlet?junkclass_classid=${junkclass.classid }" >${junkclass.classname }</a>
 					
-				</td>	
+				</td>
 				</c:forEach>
 			</tr>
 		</table>

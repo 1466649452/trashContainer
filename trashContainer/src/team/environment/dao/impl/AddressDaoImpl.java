@@ -20,10 +20,33 @@ public class AddressDaoImpl implements IAddressDao{
 		db=new DB();
 	}
 	
-	public ArrayList<Address> queryAddress(int userid) {
-		
-		
-		return null;
+	public ArrayList<Address> getADfromDB(int userid) {
+		ArrayList<Address> addr = new ArrayList<Address>();
+		UserInfo user = new UserInfo();
+		user.setUserid(userid);
+		String sql="select * from address where userid="+userid+"";
+		try {
+			ResultSet rs = db.query(sql);
+			while(rs.next()){
+				TryCity city = new TryCity();
+				city.setCityname(rs.getString("city"));
+				Address address= new Address();
+				address.setUserid(user);
+				address.setAnsname(rs.getString("ansname"));
+				address.setNumber(rs.getInt("number"));
+				address.setPhonenumber(rs.getString("phonenumber"));
+				address.setDetail(rs.getString("detail"));
+				address.setProvince(rs.getString("province"));
+				address.setCity(city);
+				
+				addr.add(address);
+			}
+			return addr;
+		} catch (SQLException e) {
+			System.out.println("addressdao");
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	public Address queryAddressOneLine(int number) {
