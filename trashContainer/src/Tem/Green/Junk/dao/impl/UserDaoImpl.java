@@ -61,4 +61,18 @@ public class UserDaoImpl implements IUserDao {
 		}
 		return User;
 	}
+	@Override
+	public String getuname(int userid) {
+		String uname = null;
+		String sql="select * from userinfo where userid='"+userid+"'";
+		try {
+			ResultSet rs = db.query(sql);
+			while(rs.next()){
+				uname = rs.getString("uname");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return uname;
+	}
 }

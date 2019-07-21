@@ -13,7 +13,8 @@ import Tem.Green.Junk.po.UserInfo;
 public class LogServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+		System.out.println("用户登录");
+		//doPost(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -35,6 +36,7 @@ public class LogServlet extends HttpServlet {
 				HttpSession session = request.getSession();
 				//保存一个对象
 				session.setAttribute("User",dao.getInfo(uemail));
+				session.setAttribute("Adress",dao.getInfo(uemail));
 				
 				System.out.println("登录成功");
 				response.sendRedirect("InfoPage.jsp");

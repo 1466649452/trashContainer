@@ -111,25 +111,26 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                	<th>编号</th>
+                  <th>编号</th>
                   <th>省份</th>
                   <th>城市</th>
-                  <th>区/县</th>
-                  <th>街道</th>
-                  <th>投放点</th>
+                  <th>详细地址</th>
+                  <th>联系电话</th>
                   <th><a href="#">增加地址</a></th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>01</td>
-                  <td>上海</td>
-                  <td>上海市</td>
-                  <td>浦东新区</td>
-                  <td>明珠大道</td>
-                  <td>站点</td>
-                  <td><a href="#">修改</a></td>
-                </tr>
+              <!-- 循环显示列表 -->
+              <c:forEach var="ads" items="${sessionScope.Adress}">
+	                <tr>
+	                  <td>${ads.number}</td>
+	                  <td>${ads.province}</td>
+	                  <td>${ads.city}</td>
+	                  <td>${ads.detail}</td>
+	                  <td>${ads.phonenumber}</td>
+	                  <td><a href="#">修改</a></td>
+	                </tr>
+              </c:forEach>
               </tbody>
             </table>
           </div>
